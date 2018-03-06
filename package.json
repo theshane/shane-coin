@@ -1,0 +1,17 @@
+{
+  "name": "shane_coin",
+  "version": "1.0.0",
+  "description": "Shane Coin is the new hot coin. But really it is just used to learn blockchain",
+  "main": "main.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "crypto-js": "^3.1.9-1",
+    "mocha": "^5.0.2",
+    "sha256": "^0.2.0"
+  }
+}
