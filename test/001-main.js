@@ -7,7 +7,7 @@ describe('BlockChain', function() {
     let shaneCoin = new BlockChain();
 
     it('should have default genisis block',function(){
-        assert.equal(shaneCoin.chain[0].data, 'Geneisis Block');
+        assert.equal(shaneCoin.chain[0].data.userId, 0);
     });
 
     describe("#addBlock()", function(){

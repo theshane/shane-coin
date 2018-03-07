@@ -8,7 +8,7 @@ module.exports = class BlockChain{
      * Creates the geneisis block which is largely ignored in most functions
     */
     createGenisisBlock(){
-     return new Block('Geneisis Block');
+     return new Block({userId: 0, amount: 0});
     }
 
     /**
@@ -41,15 +41,21 @@ module.exports = class BlockChain{
      * @param {Int} userId
      */
     getAmountByUserId(userId) {
-        let total = 0;
+      const userBlocks = this.getUserBlocks(userId);
 
-        for(let i = 1; i < this.chain.length; i++){
-           if(this.chain[i].data.userId === userId){
-               total += this.chain[i].data.amount;
-           }
-        }
+      const total = userBlocks.reduce((sum,item) => sum += item.data.amount, 0);
 
-        return total;
+      return total;
+    }
+
+    /**
+     * Get User Blocks by id
+     * @param {Int} userId
+    */
+    getUserBlocks(userId){
+        return this.chain.filter((item) => {
+            return item.data.userId == userId;
+        })
     }
 
     /**
